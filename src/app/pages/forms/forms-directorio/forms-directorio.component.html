@@ -1,0 +1,143 @@
+<div class="row page-titles">
+    <div class="col-12 animated fadeInLeft">
+        <div class="card cardtop">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-10 align-self-center">
+                        <h3 class="text-themecolor">{{pageTitle}}</h3>
+                    </div>
+                    <div class="col-12 col-sm-2">
+                        <button class="btn btn-outline-danger" href="javascript:void(0)" (click)="goBack()">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <form [formGroup]="directorioForm" (ngSubmit)="onSubmit()" class="form-horizontal form-material">
+                    <div class="row">
+                        <div class="form-group col-12 col-sm-6">
+                            <label>Nombres y Apellidos</label>
+                            <input type="text" formControlName="nombre" class="form-control" placeholder="nombre" required>
+                            <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="error">
+                                <div *ngIf="nombre.errors">
+                                    nombre es requerido.
+                                </div>
+                            </div>
+                        </div>
+                        <fieldset class="form-group col-12 col-sm-6">
+                            <label>Foto</label>
+                            <label class="custom-file d-block">
+                                        <input type="file" id="image" (change)="onSelectedFile($event)" />
+                                        <div [innerHTML]="uploadError" class="error"></div>
+                                            <div *ngIf="imagePath">
+                                                <br />
+                                                <img [src]="imagePath" width="100px">
+                                            </div>
+                                    </label>
+                        </fieldset>
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Especialidad</label>
+                            <input type="text" formControlName="especialidad" class="form-control" placeholder="especialidad" required>
+                            <div *ngIf="especialidad.invalid && (especialidad.dirty || especialidad.touched)" class="error">
+                                <div *ngIf="especialidad.errors">
+                                    especialidad es requerido.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Universidad</label>
+                            <input type="text" formControlName="universidad" class="form-control" placeholder="universidad" required>
+                            <div *ngIf="universidad.invalid && (universidad.dirty || universidad.touched)" class="error">
+                                <div *ngIf="universidad.errors">
+                                    universidad es requerido.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Año de Graduación</label>
+                            <input type="text" formControlName="ano" class="form-control" placeholder="ano" required>
+                            <div *ngIf="ano.invalid && (ano.dirty || ano.touched)" class="error">
+                                <div *ngIf="ano.errors">
+                                    año es requerido.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Sitio Web</label>
+                            <input type="text" formControlName="website" class="form-control" placeholder="website">
+                        </div>
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="text" formControlName="email" class="form-control" placeholder="email">
+                        </div>
+
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Estado</label>
+                            <input type="text" formControlName="estado" class="form-control" placeholder="estado">
+                        </div>
+                        <div class="form-group col-12 col-sm-6">
+                            <label for="exampleInputEmail1">Ciudad</label>
+                            <input type="text" formControlName="ciudad" class="form-control" placeholder="ciudad">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Teléfonos</label>
+                            <input type="text" formControlName="telefonos" class="form-control" placeholder="telefonos">
+                        </div>
+                        <div class="form-group form-row">
+                            <label class="col-md-3">Dirección <span class="required">*</span></label>
+                            <div class="col-md-9">
+                                <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="direccion" rows="5" class="form-control" placeholder="Direccion" required></ckeditor>
+
+                                <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" class="error">
+                                    <div *ngIf="direccion.errors">
+                                        Descripción es Requerido.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12">
+                            <h2>Redes Sociales</h2>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="switch col-12 col-sm-6">
+                            <i class="fa fa-facebook-square fa-2x" style="margin-right: 5px;"></i>
+                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
+                            <input type="email" class="form-control" formControlName="facebook" placeholder="Enter rrss">
+                        </div> <br>
+                        <div class="switch col-12 col-sm-6">
+                            <i class="fa fa-instagram fa-2x" style="margin-right: 5px;"></i>
+                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
+                            <input type="email col-12 col-sm-6" class="form-control" formControlName="instagram" placeholder="Enter rrss">
+                        </div> <br>
+                        <div class="switch col-12 col-sm-6">
+                            <i class="fa fa-twitter-square fa-2x" style="margin-right: 5px;"></i>
+                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
+                            <input type="email" class="form-control" formControlName="twitter" placeholder="Enter rrss">
+                        </div> <br>
+                        <div class="switch col-12 col-sm-6">
+                            <i class="fa fa-linkedin-square fa-2x" style="margin-right: 5px;"></i>
+                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
+                            <input type="email" class="form-control" formControlName="linkedin" placeholder="Enter rrss">
+                        </div>
+                    </div>
+                    <br><br>
+                    <button type="submit" class="btn btn-outline-success waves-effect waves-light m-r-10" [disabled]="!directorioForm.valid">Aceptar</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

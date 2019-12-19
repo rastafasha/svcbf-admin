@@ -1,0 +1,54 @@
+<div class="row page-titles">
+    <div class="col-12 animated fadeInUp">
+        <div class="card cardtop">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-sm-8 align-self-center">
+                        <h3 class="text-themecolor">{{title}}</h3>
+                    </div>
+                    <div class="col-12 col-sm-4 botones pull-right">
+                        <button class="btn btn-outline-danger" href="javascript:void(0)" (click)="goBack()">Volver</button>
+                        <button class="btn btn-success" [routerLink]="['/directorio/create/']">Agregar Nuevo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Including the pagination control.-->
+<div class="row ">
+    <div class="text-center mt-4 mb-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-sm-3 fr-view " *ngFor="let directorio of directorios | keys | paginate: { itemsPerPage: count, currentPage: p }">
+        <div class="card cardhome">
+            <div class="card-body">
+                <img src="{{directorio.image}}">
+                <!--img src="assets/img/logo.png"-->
+                <h5> <i class="fa fa-user-circle"></i>{{directorio.nombre}}</h5>
+                <div class="clear"></div> <br>
+                <p> <i class="fa fa-sitemap"></i> {{directorio.especialidad}}</p>
+                <p><i class="fa fa-laptop"></i>{{directorio.website}}</p>
+                <p><i class="fa fa-envelope"></i>{{directorio.email}}</p>
+                <p><i class="fa fa-map-marker"></i>{{directorio.estado}}</p>
+                <p><i class="fa fa-map-marker"></i>{{directorio.ciudad}}</p>
+                <p><i class="fa fa-map-marker"></i>{{directorio.direccion}}</p>
+
+                <button class="btn btn-outline-danger" (click)="onDelete(directorio.id)"><i class="fa fa-trash"></i>Borrar</button>
+                <a [routerLink]="['/directorio/edit', directorio.id]"><button class="btn  btn-outline-primary"><i class="fa fa-pencil"></i>Editar </button></a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="clear"></div>
+<!--Including the pagination control.-->
+<div class="row ">
+    <div class="text-center mt-4 mb-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
