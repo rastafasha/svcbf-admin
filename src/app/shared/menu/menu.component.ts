@@ -16,7 +16,7 @@ declare var jQuery: any;
 
 export class MenuComponent implements OnInit {
 
-  @ViewChild('sidenav', { static: false }) sidenav;
+  @ViewChild('sidenav') sidenav;
 
   constructor() { }
 
