@@ -24,54 +24,60 @@
             <div class="card-body blog-form">
                 <form [formGroup]="horizontalForm" (ngSubmit)="onSubmit()" class="form-horizontal form-material">
                     <div class="row">
-                        <div class="form-group col-12 col-sm-6">
-                            <label class="col-md-3">Título <span class="required">*</span></label>
-                            <div class="col-md-9">
-                                <input type="text" formControlName="titulo" class="form-control" placeholder="Title" required>
-                                <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="error">
-                                    <div *ngIf="titulo.errors">
-                                        Titulo es Requerido.
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group form-row">
+                                <label class="col-xs-12">Título <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="titulo" class="form-control" placeholder="Title" required>
+                                    <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="error">
+                                        <div *ngIf="titulo.errors">
+                                            Titulo es Requerido.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group col-12 col-sm-6">
-                            <label class="col-md-3">Enlace <span class="required">*</span></label>
-                            <div class="col-md-9">
-                                <input type="text" formControlName="enlace" class="form-control" placeholder="Enlace" required>
-                                <div *ngIf="enlace.invalid && (enlace.dirty || enlace.touched)" class="error">
-                                    <div *ngIf="enlace.errors">
-                                        Enlace es Requerido.
+                            <div class="form-group form-row">
+                                <label class="col-xs-12">Enlace <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" formControlName="enlace" class="form-control" placeholder="Enlace" required>
+                                    <div *ngIf="enlace.invalid && (enlace.dirty || enlace.touched)" class="error">
+                                        <div *ngIf="enlace.errors">
+                                            Enlace es Requerido.
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group form-row">
+                                <label class="col-xs-12">Target</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="target" value="_self" /> Enlace Interno
+                                    <input type="radio" formControlName="target" value="_blank" /> Enlace Externo
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row">
+                                <label class="col-xs-12">Activo</label>
+                                <div class="col-md-9">
+                                    <input type="radio" formControlName="is_active" value="1" /> Si
+                                    <input type="radio" formControlName="is_active" value="0" /> No
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group col-12 col-sm-6">
-                            <label class="col-md-3">Target</label>
-                            <div class="col-md-9">
-                                <input type="radio" formControlName="target" value="_self" /> _self
-                                <input type="radio" formControlName="target" value="_blank" /> _blank
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group form-row">
+                                <label class="col-xs-12">Subir Imagen (peso max: 500kb | medidas: 970x250px)</label>
+                                <div class="col-xs-12">
+                                    <input type="file" id="image" (change)="onSelectedFile($event)" />
+                                    <div [innerHTML]="uploadError" class="error"></div>
+                                    <div *ngIf="imagePath">
+                                        <br />
+                                        <img [src]="imagePath" width="90%" class="shadow">
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-group col-12 col-sm-6">
-                            <label class="col-md-3">Activo</label>
-                            <div class="col-md-9">
-                                <input type="radio" formControlName="is_active" value="1" /> Yes
-                                <input type="radio" formControlName="is_active" value="0" /> No
-                            </div>
-                        </div>
-                        <div class="form-group col-12 col-sm-6">
-                            <label class="col-md-3">Subir Imagen</label>
-                            <div class="col-md-9">
-                                <input type="file" id="image" (change)="onSelectedFile($event)" />
-                                <div [innerHTML]="uploadError" class="error"></div>
-                                <div *ngIf="imagePath">
-                                    <br />
-                                    <img [src]="imagePath" width="100px">
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="form-group form-row">
                         <label class="col-md-3"></label>

@@ -47,6 +47,34 @@ export class RevistaService {
     );
   }
 
+
+  // portada
+
+  getImgrevista(id: number) {
+    return this.http.get<Revista>(this.serverUrl + 'api_portada/adminImgrevista/' + id).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  createImgrevista(revista) {
+    return this.http.post<any>(this.serverUrl + 'api_portada/createImgRevista/', revista)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  updateImgrevista(revista, id: number) {
+    return this.http.post<any>(this.serverUrl + 'api_portada/updateImgRevista/' + id, revista)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  deleteImgrevista(id: number) {
+    return this.http.delete(this.serverUrl + 'api_portada/deleteImgRevista/' + id).pipe(
+      catchError(this.handleError)
+    );
+  }Imgr
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

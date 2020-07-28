@@ -7,7 +7,7 @@
         <!-- Logo -->
         <!-- ============================================================== -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/admin">
+            <a class="navbar-brand " href="/admin">
                 <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
@@ -31,17 +31,9 @@
             <!-- ============================================================== -->
             <ul class="navbar-nav mr-auto">
                 <!-- This is  -->
-                <li class="nav-item">
-                    <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)">
-                        <i class="ti-menu"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
-                        <i class="ti-menu"></i>
-                    </a>
-                </li>
-
+                <li class="nav-item"> <a class="nav-link  hidden-md-up waves-effect waves-dark nav-toggler" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                <li class="nav-item"> <a class="nav-link  hidden-sm-down waves-effect waves-dark sidebartoggler " href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                <li class="nav-item hidden-sm-down"></li>
             </ul>
             <!-- ============================================================== -->
             <!-- User profile and search -->
@@ -49,11 +41,12 @@
             <ul class="navbar-nav my-lg-0">
                 <!-- ============================================================== -->
                 <!-- Search -->
-                <!-- ============================================================== -->
+                <!-- ============================================================== >
                 <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                     <form class="app-search">
-                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-                </li>
+                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> 
+                    </form>
+                </li-->
                 <!-- ============================================================== -->
                 <!-- Profile -->
                 <!-- ============================================================== -->
@@ -65,22 +58,21 @@
                         <ul class="dropdown-user">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="{{user.image}}" alt="user"></div>
+                                    <div class="u-img"><img src="{{user.image}}" alt="{{user.username}}"></div>
                                     <div class="u-text">
-                                        <h4>{{user.first_name}} </h4>
-                                        <h4>{{user.last_name}} </h4>
                                         <h4>{{user.username}} </h4>
-                                        <p class="text-muted">{{user.email}}</p>
-                                        <a href="#" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                        <h4>{{user.name}} </h4>
                                     </div>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="https://svcbmf.net/" target="_blank"><i class="ti-world"></i> Web App SVCBMF</a></li>
+                            <li><a href="https://congresobucomaxilofacial.com/" target="_blank"><i class="ti-world"></i> Web App Congreso XXIX</a></li>
+                            <!--li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                             <li><a routerLink="/contactos"><i class="ti-email"></i> Inbox</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                            <li role="separator" class="divider"></li>
+                            <li role="separator" class="divider"></li-->
                             <li><a routerLink="/login"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </div>

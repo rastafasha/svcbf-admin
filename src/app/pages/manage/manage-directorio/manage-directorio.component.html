@@ -26,16 +26,15 @@
     <div class="col-12 col-sm-3 fr-view " *ngFor="let directorio of directorios | keys | paginate: { itemsPerPage: count, currentPage: p }">
         <div class="card cardhome">
             <div class="card-body">
-                <img src="{{directorio.image}}">
+                <img src="{{directorio.image}}" class="img-circle" width="45" height="45">
                 <!--img src="assets/img/logo.png"-->
-                <h5> <i class="fa fa-user-circle"></i>{{directorio.nombre}}</h5>
+                <h5> {{directorio.nombre}}</h5>
                 <div class="clear"></div> <br>
                 <p> <i class="fa fa-sitemap"></i> {{directorio.especialidad}}</p>
                 <p><i class="fa fa-laptop"></i>{{directorio.website}}</p>
                 <p><i class="fa fa-envelope"></i>{{directorio.email}}</p>
                 <p><i class="fa fa-map-marker"></i>{{directorio.estado}}</p>
                 <p><i class="fa fa-map-marker"></i>{{directorio.ciudad}}</p>
-                <p><i class="fa fa-map-marker"></i>{{directorio.direccion}}</p>
 
                 <button class="btn btn-outline-danger" (click)="onDelete(directorio.id)"><i class="fa fa-trash"></i>Borrar</button>
                 <a [routerLink]="['/directorio/edit', directorio.id]"><button class="btn  btn-outline-primary"><i class="fa fa-pencil"></i>Editar </button></a>

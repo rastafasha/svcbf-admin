@@ -5,26 +5,51 @@ import { AuthGuard } from '../auth/auth.guard';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AfiliacionesComponent } from './manage/afiliaciones/afiliaciones.component';
-import {ManageDirectorioComponent} from './manage/manage-directorio/manage-directorio.component';
-import { FormsDirectorioComponent } from './forms/forms-directorio/forms-directorio.component';
-import { ManageBlogComponent } from './manage/manage-blog/manage-blog.component';
-import { ManageRevistaComponent } from './manage/manage-revista/manage-revista.component';
-import { FormsBlogComponent } from './forms/forms-blog/forms-blog.component';
-import { FormsRevistaComponent } from './forms/forms-revista/forms-revista.component';
-import { ManageGaleriaComponent } from './manage/manage-galeria/manage-galeria.component';
-import { ManageDocumentosComponent } from './manage/manage-documentos/manage-documentos.component';
-import { ManageBanncuadradoComponent } from './manage/manage-banncuadrado/manage-banncuadrado.component';
-import { ManageBannhorizontalComponent } from './manage/manage-bannhorizontal/manage-bannhorizontal.component';
-import { ManageBannverticalComponent } from './manage/manage-bannvertical/manage-bannvertical.component';
-import { ManageContactosComponent } from './manage/manage-contactos/manage-contactos.component';
-import { ManageUsuariosComponent } from './manage/manage-usuarios/manage-usuarios.component';
-import { FormsBanverticalComponent } from './forms/forms-banvertical/forms-banvertical.component';
-import { FormsBanhorizontalComponent } from './forms/forms-banhorizontal/forms-banhorizontal.component';
-import { FormsBancuadradoComponent } from './forms/forms-bancuadrado/forms-bancuadrado.component';
-import { FormsGaleriaComponent } from './forms/forms-galeria/forms-galeria.component';
-import { FormsUsersComponent } from './forms/forms-users/forms-users.component';
 import { FormsAfiliacionesComponent } from './forms/forms-afiliaciones/forms-afiliaciones.component';
 
+import {ManageDirectorioComponent} from './manage/manage-directorio/manage-directorio.component';
+import { FormsDirectorioComponent } from './forms/forms-directorio/forms-directorio.component';
+
+import { FormsBlogComponent } from './forms/forms-blog/forms-blog.component';
+import { ManageBlogComponent } from './manage/manage-blog/manage-blog.component';
+
+import { ManageRevistaComponent } from './manage/manage-revista/manage-revista.component';
+import { FormsRevistaComponent } from './forms/forms-revista/forms-revista.component';
+
+import { ManageGaleriaComponent } from './manage/manage-galeria/manage-galeria.component';
+import { FormsGaleriaComponent } from './forms/forms-galeria/forms-galeria.component';
+
+import { ManageDocumentosComponent } from './manage/manage-documentos/manage-documentos.component';
+import { FormsDocumentosComponent } from './forms/forms-documentos/forms-documentos.component';
+
+import { ManageBanncuadradoComponent } from './manage/manage-banncuadrado/manage-banncuadrado.component';
+import { FormsBancuadradoComponent } from './forms/forms-bancuadrado/forms-bancuadrado.component';
+
+import { ManageBannhorizontalComponent } from './manage/manage-bannhorizontal/manage-bannhorizontal.component';
+import { FormsBanhorizontalComponent } from './forms/forms-banhorizontal/forms-banhorizontal.component';
+
+import { ManageBannverticalComponent } from './manage/manage-bannvertical/manage-bannvertical.component';
+import { FormsBanverticalComponent } from './forms/forms-banvertical/forms-banvertical.component';
+
+import { ManageContactosComponent } from './manage/manage-contactos/manage-contactos.component';
+
+import { ManageUsuariosComponent } from './manage/manage-usuarios/manage-usuarios.component';
+import { FormsUsersComponent } from './forms/forms-users/forms-users.component';
+
+
+import { FormsPacientesComponent } from './forms/forms-pacientes/forms-pacientes.component';
+import { ManagePacientesComponent } from './manage/manage-pacientes/manage-pacientes.component';
+import { ManageCongresopagosComponent } from './manage/manage-congresopagos/manage-congresopagos.component';
+import { ViewCongresoComponent } from './vistas/vista-congreso/view-congreso.component';
+
+import { ManageFormacionComponent } from './manage/manage-formacion/manage-formacion.component';
+import { FormsFormacionComponent } from './forms/forms-formacion/forms-formacion.component';
+import { ManageTrabajoscComponent } from './manage/manage-trabajosc/manage-trabajosc.component';
+import { ViewTrabajosComponent } from './vistas/vista-trabajos/view-trabajos.component';
+import { ManageSliderComponent } from './manage/manage-slider/manage-slider.component';
+import { FormsSliderComponent } from './forms/forms-slider/forms-slider.component';
+import { ManageAliadosComponent } from './manage/manage-aliados/manage-aliados.component';
+import { FormsAliadosComponent } from './forms/forms-aliados/forms-aliados.component';
 
 
 
@@ -56,19 +81,48 @@ const pagesRoutes: Routes = [
             { path: 'galeria/create', canActivate: [AuthGuard],component: FormsGaleriaComponent },
             { path: 'galeria/edit/:id', canActivate: [AuthGuard],component: FormsGaleriaComponent },
             { path: 'documentos', canActivate: [AuthGuard],component: ManageDocumentosComponent },
+            { path: 'documento/create', canActivate: [AuthGuard],component: FormsDocumentosComponent },
+            { path: 'documento/edit/:id', canActivate: [AuthGuard],component: FormsDocumentosComponent },
+
             { path: 'banner-cuadrado', canActivate: [AuthGuard],component: ManageBanncuadradoComponent },
             { path: 'banner-cuadrado/create', canActivate: [AuthGuard],component: FormsBancuadradoComponent },
             { path: 'banner-cuadrado/edit/:id', canActivate: [AuthGuard],component: FormsBancuadradoComponent },
+
             { path: 'banner-horizontal', canActivate: [AuthGuard],component: ManageBannhorizontalComponent },
             { path: 'banner-horizontal/create', canActivate: [AuthGuard],component: FormsBanhorizontalComponent },
             { path: 'banner-horizontal/edit/:id', canActivate: [AuthGuard],component: FormsBanhorizontalComponent },
+
             { path: 'banner-vertical', canActivate: [AuthGuard],component: ManageBannverticalComponent },
             { path: 'banner-vertical/create', canActivate: [AuthGuard],component: FormsBanverticalComponent },
             { path: 'banner-vertical/edit/:id', canActivate: [AuthGuard],component: FormsBanverticalComponent },
-            { path: 'contactos', canActivate: [AuthGuard],component: ManageContactosComponent },
+            
+            { path: 'pacientes', canActivate: [AuthGuard],component: ManagePacientesComponent },
+            { path: 'pacientes/create', canActivate: [AuthGuard],component: FormsPacientesComponent },
+            { path: 'pacientes/edit/:id', canActivate: [AuthGuard],component: FormsPacientesComponent },
+            
             { path: 'usuarios', canActivate: [AuthGuard],component: ManageUsuariosComponent },
             { path: 'usuario/create', canActivate: [AuthGuard],component: FormsUsersComponent },
             { path: 'usuario/edit/:id', canActivate: [AuthGuard],component: FormsUsersComponent },
+            
+            { path: 'contactos', canActivate: [AuthGuard],component: ManageContactosComponent },
+            
+            { path: 'congreso', canActivate: [AuthGuard],component: ManageCongresopagosComponent },
+            { path: 'congreso/view/:id', canActivate: [AuthGuard],component: ViewCongresoComponent },
+
+            { path: 'trabajos', canActivate: [AuthGuard],component: ManageTrabajoscComponent },
+            { path: 'trabajos/view/:id', canActivate: [AuthGuard],component: ViewTrabajosComponent },
+            
+            { path: 'slider', canActivate: [AuthGuard],component: ManageSliderComponent },
+            { path: 'slider/create', canActivate: [AuthGuard],component: FormsSliderComponent },
+            { path: 'slider/edit/:id', canActivate: [AuthGuard],component: FormsSliderComponent },
+            
+            { path: 'aliados', canActivate: [AuthGuard],component: ManageAliadosComponent },
+            { path: 'aliados/create', canActivate: [AuthGuard],component: FormsAliadosComponent },
+            { path: 'aliados/edit/:id', canActivate: [AuthGuard],component: FormsAliadosComponent },
+
+            { path: 'formacion', canActivate: [AuthGuard],component: ManageFormacionComponent },
+            { path: 'formacion/create', canActivate: [AuthGuard],component: FormsFormacionComponent },
+            { path: 'formacion/edit/:id', canActivate: [AuthGuard],component: FormsFormacionComponent },
             
             { path: '', redirectTo: '/admin', pathMatch: 'full'},
         ]

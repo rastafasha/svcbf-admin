@@ -1,0 +1,68 @@
+<div class="row page-titles">
+    <div class="col-12 animated fadeInLeft">
+        <div class="card cardtop">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 col-md-10 align-self-center">
+                        <h3 class="text-themecolor">{{title}}</h3>
+                    </div>
+                    <div class="col-12 col-sm-2">
+                        <button class="btn btn-outline-danger" href="javascript:void(0)" (click)="goBack()">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="animated fadeInUp">
+            <div class="card">
+                <div class="card-body" *ngIf="congreso$ | async as congreso  ">
+                    <div class="row">
+                        <div class="col-12 col-sm-10">
+                            <img src="{{congreso.image}}" style="display: block; margin: auto; width: 80%; border: 1px solid #ccc; margin-bottom: 30px;" class="shadow" alt="{{congreso.nombre}}">
+                        </div>
+                        <div class="clear"></div>
+                        <hr>
+                        <div class="col-12 col-sm-4">
+                            <h2>Datos Personales</h2>
+                            <p><b>Nombre:</b> {{congreso.nombre}}</p>
+                            <p><b>Apellido:</b> {{congreso.apellido}}</p>
+                            <p><b>Cédula o pasaporte:</b> {{congreso.cedulapassport}}</p>
+                            <p><b>Edad:</b> {{congreso.edad}}</p>
+                            <p><b>fechaNac:</b> {{congreso.fechaNac}}</p>
+                            <p><b>Teléfono:</b> {{congreso.telefono}}</p>
+                            <p><b>E-mail:</b> {{congreso.email}}</p>
+                            <p><b>Verificar e-mail:</b> {{congreso.verificaemail}}</p>
+                            <p><b>Dirección Profesional:</b> {{congreso.dirprofesional}}</p>
+
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <h2>Datos Profesionales</h2>
+                            <p><b>Descripción Cursos:</b>{{congreso.descripcionCursos}}</p>
+                            <p><b>Anualidades:</b> {{congreso.anualidades}}</p>
+                            <p><b>inscripcionSvcbmf:</b>{{congreso.inscripcionSvcbmf}}</p>
+                            <p><b>Otros Items Pagados:</b> {{congreso.otrosItemsPagados}}</p>
+                            <p><b>Cursos:</b> {{congreso.cursos}}</p>
+
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <h2>Metodología de Pago</h2>
+                            <p><b>Tipo Pago:</b> {{congreso.tipoPago}}</p>
+                            <p><b>Código de Confirmación:</b> {{congreso.codConfirmacion}}</p>
+                            <p><b>Monto Cancelado:</b> {{congreso.montocancelado}}</p>
+                            <p><b>Desc. Otros Items Pagados:</b> {{congreso.descOtrosItemsPagados}}</p>
+                            <p><b>Tipo Pago o Inscripción:</b> <br> {{congreso.tipoPagonscripcion}}</p>
+                            <p><b>Fecha:</b> {{congreso.fecha}}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

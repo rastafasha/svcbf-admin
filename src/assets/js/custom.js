@@ -1,9 +1,3 @@
-/*
-Template Name: Admin Pro Admin
-Author: Wrappixel
-Email: niravjoshi87@gmail.com
-File: js
-*/
 $(function() {
     "use strict";
     $(function() {
@@ -46,13 +40,14 @@ $(function() {
             $("body").trigger("resize");
             $("body").removeClass("mini-sidebar");
             $('.navbar-brand span').show();
-            
+
         } else {
             $("body").trigger("resize");
             $("body").addClass("mini-sidebar");
             $('.navbar-brand span').hide();
-            
+
         }
+        alert('funciona!');
     });
 
     // this is for close icon when navigation open in mobile view
@@ -100,17 +95,17 @@ $(function() {
     //tooltip
     // ============================================================== 
     $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-    // ============================================================== 
-    //Popover
-    // ============================================================== 
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        // ============================================================== 
+        //Popover
+        // ============================================================== 
     $(function() {
-        $('[data-toggle="popover"]').popover()
-    })
-    // ============================================================== 
-    // Sidebarmenu
-    // ============================================================== 
+            $('[data-toggle="popover"]').popover()
+        })
+        // ============================================================== 
+        // Sidebarmenu
+        // ============================================================== 
     $(function() {
         $('#sidebarnav').AdminMenu();
     });
@@ -119,7 +114,7 @@ $(function() {
     // Perfact scrollbar
     // ============================================================== 
     $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
-    
+
     // ============================================================== 
     // Resize all elements
     // ============================================================== 
@@ -131,7 +126,7 @@ $(function() {
         $(this).toggleClass("task-done");
     });
 
-    
+
 
     // ============================================================== 
     // Collapsable cards

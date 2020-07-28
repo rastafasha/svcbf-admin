@@ -62,6 +62,12 @@ export class FormsRevistaComponent implements OnInit {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
       this.revistaForm.get('image').setValue(file);
+    }
+  }
+
+  onSelectedPdf(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
       this.revistaForm.get('archivo').setValue(file);
     }
   }
@@ -72,10 +78,10 @@ export class FormsRevistaComponent implements OnInit {
 
   onSubmit () {
     const formData = new FormData();
-    formData.append('archivo', this.revistaForm.get('archivo').value);
     formData.append('volumen', this.revistaForm.get('volumen').value);
     formData.append('numero', this.revistaForm.get('numero').value);
     formData.append('fecha', this.revistaForm.get('fecha').value);
+    formData.append('archivo', this.revistaForm.get('archivo').value);
     formData.append('image', this.revistaForm.get('image').value);
 
     const id = this.revistaForm.get('id').value;
@@ -93,6 +99,30 @@ export class FormsRevistaComponent implements OnInit {
       );
     } else {
       this.revistaService.createRevista(formData).subscribe(
+        res => {
+          if (res.status === 'error') {
+            this.uploadError = res.message;
+          } else {
+            this.router.navigate(['/revista']);
+          }
+        },
+        error => this.error = error
+      );
+    }
+    //portada
+    if (id) {
+      this.revistaService.updateImgrevista(formData, +id).subscribe(
+        res => {
+          if (res.status === 'error') {
+            this.uploadError = res.message;
+          } else {
+            this.router.navigate(['/revista']);
+          }
+        },
+        error => this.error = error
+      );
+    } else {
+      this.revistaService.createImgrevista(formData).subscribe(
         res => {
           if (res.status === 'error') {
             this.uploadError = res.message;

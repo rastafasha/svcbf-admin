@@ -30,7 +30,6 @@
                             <th class="footable-sortable">Nombre<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Email<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Teléfono<span class="footable-sort-indicator"></span></th>
-                            <th class="footable-sortable">Ciudad<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Recibido<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Acciones<span class="footable-sort-indicator"></span></th>
                         </tr>
@@ -41,11 +40,10 @@
                             <td>{{contact.name}}</td>
                             <td>{{contact.email}}</td>
                             <td>{{contact.phone}}</td>
-                            <td>{{contact.ciudad}}</td>
+                            <td>{{contact.message}}</td>
                             <td>{{contact.created_at | date: 'mediumDate'}}</td>
                             <td>
                                 <button class="btn btn-sm btn-outline-danger" (click)="onDelete(contact.id)"><i class="fa fa-trash"></i>Borrar</button>
-                                <a [routerLink]="['/contact/edit', contact.id]"><button class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i>Editar </button></a>
                             </td>
                         </tr>
 

@@ -22,7 +22,7 @@ export class AfiliacionesComponent implements OnInit {
   private http: HttpClient;
 
   p: Number = 1;
-  count: Number = 5;
+  count: Number = 8;
 
   constructor(
     public afiliacionesService: AfiliacionesService,
@@ -36,6 +36,7 @@ export class AfiliacionesComponent implements OnInit {
       (data: Afiliaciones) => this.afiliaciones = data,
       error => this.error = error
     );
+    console.log(this.afiliaciones)
   }
 
   onDelete(id: number) {

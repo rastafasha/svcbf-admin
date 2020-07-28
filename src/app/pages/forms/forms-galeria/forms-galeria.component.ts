@@ -15,6 +15,7 @@ export class FormsGaleriaComponent implements OnInit {
   error: string;
   uploadError: string;
   imagePath: string;
+  imagePath1: string;
 
   galeriaForm: FormGroup;
 
@@ -57,7 +58,7 @@ export class FormsGaleriaComponent implements OnInit {
       this.galeriaForm.get('image').setValue(file);
     }
   }
-  
+
   get titulo() { return this.galeriaForm.get('titulo'); }
 
   onSubmit () {

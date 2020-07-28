@@ -15,17 +15,28 @@
     height: 250px;
 }*/
 
+.shadow {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+}
+
+.shadowHover:hover {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, .11), 0 5px 15px 0 rgba(0, 0, 0, .08);
+}
+
 .cardhome .card-body {
     background-image: url(../img/disruptive-tech-1600x600-c-default.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: 0% -24%;
 }
 
 .cardhome img {
-    width: 30%;
     display: block;
-    margin-top: 0px;
+    float: left;
+    margin-top: -10px;
     margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid;
 }
 
 .card p i,

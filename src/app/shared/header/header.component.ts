@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/users.service';
 import { User } from '../../models/users';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -24,7 +25,11 @@ export class HeaderComponent implements OnInit {
       (data: User) => this.users = data,
       error => this.error = error
     );
+
   }
+
+ 
+
 
 
 }

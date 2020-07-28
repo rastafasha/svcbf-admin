@@ -31,6 +31,7 @@
                             <th class="footable-sortable">Título<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Enlace<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Abre<span class="footable-sort-indicator"></span></th>
+                            <th class="footable-sortable">Activo<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Acciones<span class="footable-sort-indicator"></span></th>
                         </tr>
                     </thead>
@@ -41,6 +42,7 @@
                             <td>{{banhorizontal.titulo}}</td>
                             <td>{{banhorizontal.enlace}}</td>
                             <td>{{banhorizontal.target}}</td>
+                            <td>{{banhorizontal.is_active}}</td>
                             <td>
                                 <button class="btn btn-sm btn-outline-danger" (click)="onDelete(banhorizontals.id)"><i class="fa fa-trash"></i>Borrar</button>
                                 <a [routerLink]="['/banner-horizontal/edit', banhorizontal.id]"><button class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i>Editar </button></a>

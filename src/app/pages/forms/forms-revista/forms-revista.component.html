@@ -69,7 +69,7 @@
                         <div class="form-group col-12 col-sm-6">
                             <label>Subir archivo pdf</label>
                             <div>
-                                <input type="file" id="archivo" (change)="onSelectedFile($event)" />
+                                <input type="file" id="archivo" (change)="onSelectedPdf($event)" />
                                 <div [innerHTML]="uploadError" class="error"></div>
                                 <div *ngIf="filePath">
                                     <br />

@@ -16,14 +16,15 @@ import { PagesModule } from './pages/pages.modulo';
 // Import Angular plugin.
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
+import { ExcelService } from './services/excel.service';
 
-//import * as $ from "jquery";
+
+// import * as $ from "jquery";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     AuthModule,
     CKEditorModule
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders, ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

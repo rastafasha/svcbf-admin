@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
+import * as $ from 'jquery';
 //declare function init_plugins();
+
+declare var $: any;
+declare var jQuery: any;
+
+
 
 @Component({
   selector: 'app-menu',
@@ -8,12 +13,19 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 
+
 export class MenuComponent implements OnInit {
+
+  @ViewChild('sidenav', { static: false }) sidenav;
 
   constructor() { }
 
   ngOnInit() {
     //init_plugins();
+  }
+
+  toggleNav(){
+    this.sidenav.toggle();
   }
 
 }

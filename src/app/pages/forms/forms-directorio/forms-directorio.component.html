@@ -23,7 +23,7 @@
                 <form [formGroup]="directorioForm" (ngSubmit)="onSubmit()" class="form-horizontal form-material">
                     <div class="row">
                         <div class="form-group col-12 col-sm-6">
-                            <label>Nombres y Apellidos</label>
+                            <label>Nombres y Apellidos <span class="required">*</span></label>
                             <input type="text" formControlName="nombre" class="form-control" placeholder="nombre" required>
                             <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="error">
                                 <div *ngIf="nombre.errors">
@@ -43,7 +43,7 @@
                                     </label>
                         </fieldset>
                         <div class="form-group col-12 col-sm-6">
-                            <label for="exampleInputEmail1">Especialidad</label>
+                            <label for="exampleInputEmail1">Especialidad <span class="required">*</span></label>
                             <input type="text" formControlName="especialidad" class="form-control" placeholder="especialidad" required>
                             <div *ngIf="especialidad.invalid && (especialidad.dirty || especialidad.touched)" class="error">
                                 <div *ngIf="especialidad.errors">
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="form-group col-12 col-sm-6">
-                            <label for="exampleInputEmail1">Universidad</label>
+                            <label for="exampleInputEmail1">Universidad <span class="required">*</span></label>
                             <input type="text" formControlName="universidad" class="form-control" placeholder="universidad" required>
                             <div *ngIf="universidad.invalid && (universidad.dirty || universidad.touched)" class="error">
                                 <div *ngIf="universidad.errors">
@@ -61,8 +61,8 @@
                             </div>
                         </div>
                         <div class="form-group col-12 col-sm-6">
-                            <label for="exampleInputEmail1">Año de Graduación</label>
-                            <input type="text" formControlName="ano" class="form-control" placeholder="ano" required>
+                            <label for="exampleInputEmail1">Año de Graduación <span class="required">*</span></label>
+                            <input type="text" formControlName="ano" class="form-control" placeholder="año" required>
                             <div *ngIf="ano.invalid && (ano.dirty || ano.touched)" class="error">
                                 <div *ngIf="ano.errors">
                                     año es requerido.
@@ -70,12 +70,17 @@
                             </div>
                         </div>
                         <div class="form-group col-12 col-sm-6">
-                            <label for="exampleInputEmail1">Sitio Web</label>
+                            <label for="exampleInputEmail1">Sitio Web <span class="required">*</span></label>
                             <input type="text" formControlName="website" class="form-control" placeholder="website">
                         </div>
                         <div class="form-group col-12 col-sm-6">
-                            <label for="exampleInputEmail1">Email</label>
+                            <label for="exampleInputEmail1">Email<span class="required">*</span></label>
                             <input type="text" formControlName="email" class="form-control" placeholder="email">
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                                <div *ngIf="email.errors">
+                                    email es requerido.
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-group col-12 col-sm-6">
@@ -86,19 +91,18 @@
                             <label for="exampleInputEmail1">Ciudad</label>
                             <input type="text" formControlName="ciudad" class="form-control" placeholder="ciudad">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-12 col-sm-6">
                             <label for="exampleInputEmail1">Teléfonos</label>
                             <input type="text" formControlName="telefonos" class="form-control" placeholder="telefonos">
                         </div>
-                        <div class="form-group form-row">
-                            <label class="col-md-3">Dirección <span class="required">*</span></label>
-                            <div class="col-md-9">
-                                <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="direccion" rows="5" class="form-control" placeholder="Direccion" required></ckeditor>
-
-                                <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" class="error">
-                                    <div *ngIf="direccion.errors">
-                                        Descripción es Requerido.
-                                    </div>
+                        <div class="form-group col-12 col-sm-4">
+                            <label>Dirección <span class="required">*</span></label>
+                        </div>
+                        <div class="form-group col-12 col-sm-8">
+                            <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" formControlName="direccion" rows="5" class="form-control" placeholder="Direccion" required></ckeditor>
+                            <div *ngIf="direccion.invalid && (direccion.dirty || direccion.touched)" class="error">
+                                <div *ngIf="direccion.errors">
+                                    Descripción es Requerido.
                                 </div>
                             </div>
                         </div>
@@ -113,23 +117,19 @@
                         <div class="clear"></div>
                         <div class="switch col-12 col-sm-6">
                             <i class="fa fa-facebook-square fa-2x" style="margin-right: 5px;"></i>
-                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
-                            <input type="email" class="form-control" formControlName="facebook" placeholder="Enter rrss">
-                        </div> <br>
+                            <input type="text" class="form-control" formControlName="facebook" placeholder="Enter rrss">
+                        </div> <br><br>
                         <div class="switch col-12 col-sm-6">
                             <i class="fa fa-instagram fa-2x" style="margin-right: 5px;"></i>
-                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
-                            <input type="email col-12 col-sm-6" class="form-control" formControlName="instagram" placeholder="Enter rrss">
-                        </div> <br>
+                            <input type="text " class="form-control" formControlName="instagram" placeholder="Enter rrss">
+                        </div> <br><br>
                         <div class="switch col-12 col-sm-6">
                             <i class="fa fa-twitter-square fa-2x" style="margin-right: 5px;"></i>
-                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
-                            <input type="email" class="form-control" formControlName="twitter" placeholder="Enter rrss">
-                        </div> <br>
+                            <input type="text" class="form-control" formControlName="twitter" placeholder="Enter rrss">
+                        </div> <br><br>
                         <div class="switch col-12 col-sm-6">
                             <i class="fa fa-linkedin-square fa-2x" style="margin-right: 5px;"></i>
-                            <label>OFF<input type="checkbox" ><span class="lever"></span>ON</label> <br>
-                            <input type="email" class="form-control" formControlName="linkedin" placeholder="Enter rrss">
+                            <input type="text" class="form-control" formControlName="linkedin" placeholder="Enter rrss">
                         </div>
                     </div>
                     <br><br>

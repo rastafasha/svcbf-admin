@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-12 col-sm-4 botones pull-right">
                         <button class="btn btn-outline-danger" href="javascript:void(0)" (click)="goBack()">Volver</button>
-                        <button class="btn btn-success" [routerLink]="['/blog/create/']">Agregar Nuevo</button>
+                        <button class="btn btn-success" [routerLink]="['/documento/create/']">Agregar Nuevo</button>
                     </div>
                 </div>
             </div>
@@ -28,13 +28,16 @@
                         <tr class="text-center">
                             <th class="footable-sortable">No<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Título<span class="footable-sort-indicator"></span></th>
+                            <th class="footable-sortable">Archivo<span class="footable-sort-indicator"></span></th>
                             <th class="footable-sortable">Acciones<span class="footable-sort-indicator"></span></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="footable-even" *ngFor="let documento of documentos | keys | paginate: { itemsPerPage: count, currentPage: p }">
-                            <td><span class="footable-toggle"></span>{{documento.userID}}</td>
+                            <td><span class="footable-toggle"></span>{{documento.id}}</td>
                             <td>{{documento.titulo}}</td>
+                            <td>{{documento.archivo}}</td>
+
                             <td>
                                 <button class="btn btn-sm btn-outline-danger" (click)="onDelete(documento.id)"><i class="fa fa-trash"></i>Borrar</button>
                                 <a [routerLink]="['/documento/edit', documento.id]"><button class="btn btn-sm btn-outline-success"><i class="fa fa-pencil"></i>Editar </button></a>

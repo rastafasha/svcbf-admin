@@ -29,12 +29,6 @@ export class ContactService {
     );
   }
 
-  getContact(id: number) {
-    return this.http.get<Contact>(this.serverUrl + 'api_contact/adminContact/' + id).pipe(
-      catchError(this.handleError)
-    );
-  }
-
   contactForm(formdata: Contact) {
     return this.http.post<Contact>(this.serverUrl + 'api_contact/contact/', formdata, this.httpOptions)
     .pipe(

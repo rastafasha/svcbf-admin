@@ -15,6 +15,12 @@
         </div>
     </div>
 </div>
+<!--Including the pagination control.-->
+<div class="row ">
+    <div class="text-center mt-4 mb-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
 <div class="row">
     <div class="col-xs-12 col-sm-3" *ngFor="let afiliacione of afiliaciones | keys | paginate: { itemsPerPage: count, currentPage: p }">
         <div class="card ">
@@ -37,7 +43,7 @@
                 <p><i class="fa fa-map-marker"></i>{{afiliacione.estado}}</p>
                 <p><i class="fa fa-map-marker"></i>{{afiliacione.ciudad}}</p>
                 <p><i class="fa fa-map-marker"></i>{{afiliacione.telefonos}}</p>
-                <a href="{{afiliaciones.archivo}}" target="_blank">
+                <a href="{{afiliacione.archivo}}" target="_blank">
                     <button class="btn btn-primary btn-block"> PDF {{afiliaciones.archivo}}</button>
                 </a>
 

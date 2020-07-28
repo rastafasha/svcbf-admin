@@ -4,6 +4,7 @@ import { Directorio } from '../../../models/directorio';
 import { Location } from '@angular/common';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpBackend} from '@angular/common/http';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-manage-directorio',
@@ -17,6 +18,7 @@ export class ManageDirectorioComponent implements OnInit {
   error: string;
   data:string;
 
+  public Editor = ClassicEditor;
 
   p: Number = 1;
   count: Number = 8;
