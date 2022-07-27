@@ -1,0 +1,238 @@
+<div class="row page-titles " *ngFor="let user of users">
+    <div class="col-md-5 align-self-center">
+        <h2 class="text-themecolor animated fadeInLeft">Bienvenid@
+            <h4 class="animated fadeInDown">Usuario: {{user.username}} </h4>
+        </h2>
+    </div>
+</div>
+<div class="row animated fadeInUp">
+
+    <div class="col-xs-12 col-sm-6">
+        <h3 class="col-12">Directorio </h3>
+        <div class="row">
+            <div class="col-6 ">
+                <div class="card">
+                    <a routerLink="../directorio">
+                        <div class="card-body">
+                            <i class="fa fa-address-card"></i>
+                            <p>Directorio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-6  ">
+                <div class="card">
+                    <a routerLink="../afiliaciones">
+                        <div class="card-body">
+                            <i class="fa fa-pencil"></i>
+                            <p>Solicitudes Afiliaciones Web-V1</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <h3 class="col-12">Directiva </h3>
+
+        <div class="row">
+            <div class="col-6 ">
+                <div class="card">
+                    <a routerLink="../ceo">
+                        <div class="card-body">
+                            <i class="fa fa-address-card"></i>
+                            <p>Personal Directiva</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div class="card">
+                    <a routerLink="../fotoceo">
+                        <div class="card-body">
+                            <i class="fa fa-picture-o"></i>
+                            <p>Foto Ppal.Directiva</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+            <a routerLink="../news-instagram">
+                <div class="card-body">
+                    <i class="fa fa-instagram"></i>
+                    <p>Intagram News</p>
+                </div>
+            </a>
+        </div>
+    </div-->
+    <!--div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+            <a routerLink="../congreso">
+                <div class="card-body">
+                    <i class="fa fa-dollar"></i>
+                    <p>Pagos Congreso</p>
+                </div>
+            </a>
+        </div>
+    </div-->
+    <!--div class="col-6 col-sm-4 col-md-3">
+
+        <div class="card">
+            <a routerLink="../trabajos">
+                <div class="card-body">
+                    <i class="fa fa-flask"></i>
+                    <p>Trabajos Científicos</p>
+                </div>
+            </a>
+        </div>
+    </div-->
+
+
+
+</div>
+
+<div class="row animated fadeInUp">
+    <h3 class="col-12">Blogs </h3>
+
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../blog">
+                <div class="card-body">
+                    <i class="fa fa-newspaper-o"></i>
+                    <p>Blog</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../pacientes">
+                <div class="card-body">
+                    <i class="fa fa-newspaper-o"></i>
+                    <p>Tips Pacientes</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../formacion">
+                <div class="card-body">
+                    <i class="fa fa-newspaper-o"></i>
+                    <p>Servicios de Formacion</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeInUp">
+    <h3 class="col-12">Documentación</h3>
+    <div class="col-6 ">
+        <div class="card">
+            <a routerLink="../documentos">
+                <div class="card-body">
+                    <i class="fa fa-file-pdf-o"></i>
+                    <p>Documentos</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 ">
+        <div class="card">
+            <a routerLink="../galeria">
+                <div class="card-body">
+                    <i class="fa fa-picture-o"></i>
+                    <p>Galería</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeInUp">
+    <h3 class="col-12">Varios</h3>
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../revista">
+                <div class="card-body">
+                    <i class="fa fa-file-text"></i>
+                    <p>Revista</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../slider">
+                <div class="card-body">
+                    <i class="fa fa-ticket"></i>
+                    <p>Slider Home</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4  ">
+        <div class="card">
+            <a routerLink="../aliados">
+                <div class="card-body">
+                    <i class="fa fa-users"></i>
+                    <p>Logos Aliados</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="row animated fadeInUp">
+    <h3 class="col-12">Publicidad</h3>
+    <!--div class="col-6 col-sm-4 col-md-3">
+        <div class="card">
+            <a routerLink="../postgrados">
+                <div class="card-body">
+                    <i class="fa fa-graduation-cap"></i>
+                    <p>Postgrados</p>
+                </div>
+            </a>
+        </div>
+    </div-->
+
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../banner-cuadrado">
+                <div class="card-body">
+                    <i class="fa fa-ticket"></i>
+                    <p>Banners ADS Cuadrado</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../banner-horizontal">
+                <div class="card-body">
+                    <i class="fa fa-ticket"></i>
+                    <p>Banners ADS Horizontal</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-6 col-sm-4 ">
+        <div class="card">
+            <a routerLink="../banner-vertical">
+                <div class="card-body">
+                    <i class="fa fa-ticket"></i>
+                    <p>Banners ADS Vertical</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
