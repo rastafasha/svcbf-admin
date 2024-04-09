@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { User } from '../../models/users';
@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class RegistroComponent implements OnInit {
 
-  forma: FormGroup;
+  forma: UntypedFormGroup;
   user: User;
   imagePath: string;
   error: string;
@@ -25,12 +25,12 @@ export class RegistroComponent implements OnInit {
   constructor(
     public userService: UserService,
     public router: Router,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
   ) { }
 
   sonIguales( campo1: string, campo2: string) {
 
-    return( group: FormGroup) => {
+    return( group: UntypedFormGroup) => {
 
       let pass1 = group.controls[ campo1].value;
       let pass2 = group.controls[ campo2].value;
@@ -61,7 +61,7 @@ export class RegistroComponent implements OnInit {
       password2: [''],
       is_active: ['1'],
       user_role: ['user'],
-      condiciones: new FormControl(false)
+      condiciones: new UntypedFormControl(false)
     }, { validators: this.sonIguales( 'password', 'password2' ) } );
 
     /*this.forma = new FormGroup({

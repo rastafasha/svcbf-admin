@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BanverticalService } from '../../../services/ban-vertical.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -16,10 +16,10 @@ export class FormsBanverticalComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  verticalForm: FormGroup;
+  verticalForm: UntypedFormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private banverticalService: BanverticalService,
     private router: Router,
     private route: ActivatedRoute,

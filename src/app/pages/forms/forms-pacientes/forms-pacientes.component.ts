@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PacienteService } from '../../../services/paciente.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
@@ -18,11 +18,11 @@ export class FormsPacientesComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  pacienteForm: FormGroup;
+  pacienteForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private pacienteService: PacienteService,
     private router: Router,
     private route: ActivatedRoute,

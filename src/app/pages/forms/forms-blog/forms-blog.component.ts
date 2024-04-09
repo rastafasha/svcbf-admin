@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../../services/blog.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -20,13 +20,13 @@ export class FormsBlogComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  blogForm: FormGroup;
+  blogForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
 
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private blogService: BlogService,
     private router: Router,
     private route: ActivatedRoute,

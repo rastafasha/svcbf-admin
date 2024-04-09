@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BanncuadradoService } from '../../../services/ban-cuadrado.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -17,10 +17,10 @@ export class FormsBancuadradoComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  cuadradoForm: FormGroup;
+  cuadradoForm: UntypedFormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private banncuadradoService: BanncuadradoService,
     private router: Router,
     private route: ActivatedRoute,

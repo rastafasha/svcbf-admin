@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 import { Ceo } from 'src/app/models/ceo';
@@ -26,13 +26,13 @@ export class CeoComponent implements OnInit {
   cargo;
   ceo:Ceo;
 
-  ceoForm: FormGroup;
+  ceoForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
 
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private ceoService: CeoService,
     private router: Router,
     private activatedRoute: ActivatedRoute,

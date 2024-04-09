@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BannhorizontalService } from '../../../services/ban-horizontal.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -16,10 +16,10 @@ export class FormsBanhorizontalComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  horizontalForm: FormGroup;
+  horizontalForm: UntypedFormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private bannhorizontalService: BannhorizontalService,
     private router: Router,
     private route: ActivatedRoute,

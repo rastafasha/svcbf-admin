@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DirectorioService } from '../../../services/directorio.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 import { Location } from '@angular/common';
@@ -26,7 +26,7 @@ export class FormsDirectorioComponent implements OnInit {
    * Formulario que contiene los filtros de busqueda de las personas
    */
 
-  directorioForm: FormGroup;
+  directorioForm: UntypedFormGroup;
   imagePath: string;
 
   infoDirectorio: Directorio;
@@ -67,7 +67,7 @@ export class FormsDirectorioComponent implements OnInit {
   vcard: string;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private directorioService: DirectorioService,
     private router: Router,
     private activatedRoute: ActivatedRoute,

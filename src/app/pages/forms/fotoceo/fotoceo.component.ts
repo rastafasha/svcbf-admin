@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 import { Fotoceo } from 'src/app/models/fotoceo';
@@ -24,13 +24,13 @@ export class FotoceoComponent implements OnInit {
   imagePath: string;
   fotoceo:Fotoceo;
 
-  fotoceoForm: FormGroup;
+  fotoceoForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
 
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private fotoceoService: FotoceoService,
     private router: Router,
     private activatedRoute: ActivatedRoute,

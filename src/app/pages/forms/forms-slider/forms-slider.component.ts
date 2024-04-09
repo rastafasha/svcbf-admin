@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SliderService } from '../../../services/slider.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
@@ -18,12 +18,12 @@ export class FormsSliderComponent implements OnInit {
   imagePath: string;
   imagePath2: string;
 
-  sliderForm: FormGroup;
+  sliderForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
   public editorData = `<p>This is a CKEditor 4 WYSIWYG editor instance created with Angular.</p>`;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private sliderService: SliderService,
     private router: Router,
     private route: ActivatedRoute,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfiguracionService } from '../../../services/configuracion.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -18,13 +18,13 @@ export class ConfiguracionComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  configForm: FormGroup;
+  configForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
 
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private configuracionService: ConfiguracionService,
     private router: Router,
     private route: ActivatedRoute,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GaleriaService } from '../../../services/galeria.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -17,10 +17,10 @@ export class FormsGaleriaComponent implements OnInit {
   imagePath: string;
   imagePath1: string;
 
-  galeriaForm: FormGroup;
+  galeriaForm: UntypedFormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private galeriaService: GaleriaService,
     private router: Router,
     private route: ActivatedRoute,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RevistaService } from '../../../services/revista.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -17,10 +17,10 @@ export class FormsRevistaComponent implements OnInit {
   imagePath: string;
   filePath: string;
 
-  revistaForm: FormGroup;
+  revistaForm: UntypedFormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private revistaService: RevistaService,
     private router: Router,
     private route: ActivatedRoute,

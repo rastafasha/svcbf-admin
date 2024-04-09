@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AfiliacionesService } from '../../../services/afiliaciones.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
@@ -19,11 +19,11 @@ export class FormsAfiliacionesComponent implements OnInit {
   imagePath: string;
   afiliaciones:Afiliaciones
 
-  afiliacionesForm: FormGroup;
+  afiliacionesForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private afiliacionesService: AfiliacionesService,
     private router: Router,
     private route: ActivatedRoute,

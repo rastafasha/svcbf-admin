@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DirregionalService } from '../../../services/dirregional.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
@@ -19,11 +19,11 @@ export class FormsDirregionalComponent implements OnInit {
   uploadError: string;
   imagePath: string;
 
-  dirregionalForm: FormGroup;
+  dirregionalForm: UntypedFormGroup;
   public Editor = DecoupledEditor;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private dirregionalService: DirregionalService,
     private router: Router,
     private route: ActivatedRoute,
