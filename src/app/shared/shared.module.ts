@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import { ModalComponent } from './modal/modal.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
 
@@ -24,13 +25,15 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
         HeaderComponent,
         MenuComponent,
         FooterComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
+        ModalComponent
     ],
     exports: [
         HeaderComponent,
         MenuComponent,
         FooterComponent,
-        NopagefoundComponent
+        NopagefoundComponent,
+        ModalComponent
     ]
 })
 

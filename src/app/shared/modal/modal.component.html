@@ -1,0 +1,55 @@
+<!-- Modal -->
+<div *ngFor="let doctor of doctor; let i = index">
+    <div class="modal fade" id="{{doctor.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body ">
+                        <p><i class="fa fa-envelope"></i>{{doctor.email}}</p>
+                        <div *ngIf="doctor.website">
+                            <p><i class="fa fa-laptop"></i>{{doctor.website}}</p>
+                        </div>
+                        <div *ngIf="doctor.telprincipal">
+                            <p><i class="fa fa-phone"></i>{{doctor.telprincipal}}</p>
+                        </div>
+                        <div *ngIf="doctor.tel1">
+                            <p><i class="fa fa-phone"></i>{{doctor.tel1}}</p>
+                        </div>
+                        <div *ngIf="doctor.telhome">
+                            <p><i class="fa fa-phone"></i>{{doctor.telhome}}</p>
+                        </div>
+
+                        <div *ngIf="doctor.telefonos">
+                            <p><i class="fa fa-phone"></i>{{doctor.telefonos}}</p>
+                        </div>
+                        <p [innerHTML]="doctor.direccion | keepHtml"></p>
+                        <div class="redess">
+                            <div *ngIf="doctor.facebook">
+                                <p><i class="fa fa-facebook"></i>{{doctor.facebook}}</p>
+                            </div>
+                            <div *ngIf="doctor.instagram">
+                                <p><i class="fa fa-instagram"></i>{{doctor.instagram}}</p>
+                            </div>
+                            <div *ngIf="doctor.twitter">
+                                <p><i class="fa fa-twitter"></i>{{doctor.twitter}}</p>
+                            </div>
+                            <div *ngIf="doctor.linkedin">
+                                <p><i class="fa fa-linkedin"></i>{{doctor.linkedin}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

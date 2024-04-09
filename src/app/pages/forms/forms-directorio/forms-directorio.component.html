@@ -163,6 +163,7 @@
                                 <qr-code *ngIf="display" class="code" id="box" [value]="vCardInfo" [size]="250">
                                     <img class="yellow">
                                 </qr-code>
+                                <a *ngIf="display" [value]="vCardInfo" (click)="hideQRCode()">Hide QR</a>
                                 <a *ngIf="display" [href]="href" (click)="downloadImage()" download>Download Image</a>
                             </div>
                         </div>

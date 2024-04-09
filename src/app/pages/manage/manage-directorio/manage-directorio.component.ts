@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpBackend} from '@angular/common/http';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manage-directorio',
   templateUrl: './manage-directorio.component.html',
@@ -44,9 +44,13 @@ export class ManageDirectorioComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    if (confirm('Are you sure want to delete id = ' + id)) {
-      this.directorioService.deleteDirectorio(+id).subscribe(
-        res => {
+    if (
+      // confirm('Are you sure want to delete id = ' + id)
+      Swal.fire('Quieres Borrar?', 'Are you sure want to delete id = ' + id)
+      ) {
+        this.directorioService.deleteDirectorio(+id).subscribe(
+          res => {
+          Swal.fire('Borrado!', 'Los cambios fueron actualizados', 'success')
           //console.log(res);
           this.ngOnInit();
         },

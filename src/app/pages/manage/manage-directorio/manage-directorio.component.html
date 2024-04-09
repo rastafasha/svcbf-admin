@@ -51,11 +51,16 @@
                                                 <img src="{{directorio.image}}" class="circle">
                                             </div>
                                         </div>
+                                        <p>Nombre</p>
                                         <h5 class="card-title"><b>{{directorio.surname}}, {{directorio.nombre}} </b></h5>
                                         <h6 class="card-subtitle mb-2 text-muted">{{directorio.especialidad}}</h6>
-                                        <h6 class="card-subtitle mb-2 text-muted">{{directorio.ciudad}}</h6>
+                                        <p>email</p>
+                                        <h5>{{directorio.email}}</h5>
                                     </div>
                                     <div class="botonesss">
+                                        <!-- <button type="button" class="btn btn-outline-primary" data-toggle="modal" [attr.data-target]="'#' + doctores.id">
+                                        <i class="fa fa-eye"></i>View
+                                        </button> -->
                                         <button class="btn btn-outline-danger" (click)="onDelete(directorio.id)"><i class="fa fa-trash"></i>Borrar</button>
                                         <a [routerLink]="['/directorio/edit', directorio.id]"><button class="btn  btn-outline-primary"><i class="fa fa-pencil"></i>Editar </button></a>
                                     </div>
@@ -65,6 +70,10 @@
                             </div>
                         </div>
                     </div>
+                    <!---modal-->
+
+
+                    <!---fin modal-->
 
 
 

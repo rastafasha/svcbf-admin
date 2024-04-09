@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DirectorioService } from '../../../services/directorio.service';
 import { Directorio } from '../../../models/directorio';
 import { Location } from '@angular/common';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpBackend} from '@angular/common/http';
 import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-buscador',
@@ -14,17 +14,23 @@ import * as DecoupledEditor from '@ckeditor/ckeditor5-build-decoupled-document';
 })
 export class BuscadorComponent implements OnInit {
 
+  /**
+  * propiedad encargada de cerrar modal en componente padre
+  * @property {Output}
+  */
+@Output() public mostrarform: boolean= false;
+ @Output() cerrarPopUp = new EventEmitter();
+
   directorios: Directorio;
+  doctor: Directorio;
   title = 'Buscador';
-
   error: string;
-
-
   doctores;
 
   private http: HttpClient;
 
   ServerUrl = environment.baseUrl;
+  imagenSerUrl = environment.mediaUrl;
 
   p: Number = 1;
   count: Number = 5;
@@ -39,7 +45,8 @@ export class BuscadorComponent implements OnInit {
   constructor(
     public directorioService: DirectorioService,
     private location: Location,
-    handler: HttpBackend) {
+    handler: HttpBackend
+    ) {
     this.http = new HttpClient(handler);
    }
 
@@ -83,10 +90,7 @@ export class BuscadorComponent implements OnInit {
       // devolver el array
       const mapped = Object.keys(doctores)
       .map(key => ({type: key, value: doctores[key]}));
-
-
-
-      console.log(doctores);
+      // console.log(doctores);
       this.doctores = doctores;
 
       });
@@ -96,6 +100,39 @@ export class BuscadorComponent implements OnInit {
 
   goBack() {
     this.location.back(); // <-- go back to previous location on cancel
+  }
+
+  onDelete(id: number) {
+
+    // Swal.fire('Quieres Borrar?', 'Are you sure want to delete id = ' + id)
+    if (
+      confirm('Are you sure want to delete id = ' + id)
+      ) {
+        this.directorioService.deleteDirectorio(+id).subscribe(
+          res => {
+          Swal.fire('Borrado!', 'Los cambios fueron actualizados', 'success')
+          //console.log(res);
+          this.ngOnInit();
+          this.search('a');
+        },
+        error => this.error = error
+      );
+    }
+  }
+
+  public openModal(id:number){
+    this.directorioService.getDirectorio(id).subscribe(
+      res=>{
+        this.doctor = res;
+      }
+    )
+    console.log(this.doctor.id)
+    this.mostrarform = true;
+  }
+
+  public CerrarModal() {
+    this.mostrarform = false;
+    this.cerrarPopUp.emit();
   }
 
 }

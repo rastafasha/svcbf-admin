@@ -185,13 +185,13 @@ import { FormsDirregionalComponent } from './forms/forms-dirregional/forms-dirre
   imports: [
       CommonModule,
       SharedModule,
-      PAGES_ROUTES,
       FormsModule,
       ReactiveFormsModule,
       OrderModule,
       NgxPaginationModule,
       CKEditorModule,
-      QRCodeModule
+      QRCodeModule,
+      PAGES_ROUTES,
 
 
   ]

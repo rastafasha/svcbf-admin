@@ -85,6 +85,25 @@ export class FormsDirectorioComponent implements OnInit {
 
   }
 
+  openToast(){
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      // didOpen: (toast) => {
+      //   toast.addEventListener('mouseenter', Swal.stopTimer)
+      //   toast.addEventListener('mouseleave', Swal.resumeTimer)
+      // }
+    })
+
+    Toast.fire({
+      icon: 'success',
+      title: 'Signed in successfully'
+    })
+  }
+
   /**
    * @method: Permite iniciar formulario y obtener la info del id
    * @author: malcolm
@@ -340,6 +359,14 @@ generateQRCode(){
   }
   return false;
 
+}
+
+hideQRCode(){
+  if( this.directorioForm.valid){
+    this.display = false;
+    // alert("Please enter the name");
+  }
+  return false;
 
 }
 
